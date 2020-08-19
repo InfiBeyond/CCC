@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1578373038 source:c:\users\nancy qin\desktop\waterloo\2016\2016s1\main.cpp
+	<iostream>
+	<vector>
+
+1580602705 source:c:\users\nanxi\onedrive\desktop\coding\waterloo\2016\2016s1\main.cpp
+	<iostream>
+	<vector>
+	<string>
+

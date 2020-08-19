@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1578853432 source:c:\users\nancy qin\desktop\2019s3\main.cpp
+	<iostream>
+	<vector>
+	<sstream>
+

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1578258477 source:c:\users\nancy qin\desktop\ccclesson6\homework\main.cpp
+	<iostream>
+	<algorithm>
+	<vector>
+	<cmath>
+

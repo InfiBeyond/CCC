@@ -1,0 +1,21 @@
+1. What type of data does a main function return? 
+2. What is the difference between syntax error and runtime error? 
+3. If x = 10, y = 12, what are the new values of x?
+   a). x = x; 
+   b). x += x; 
+   c). x = --y; 
+
+4. Given: 
+    int x = 7; 
+    int y = 4; 
+   What will be the values of the operations below? 
+   a). x % y
+   b). y % x
+   c). x / y
+   d). x / (double y)
+   e). double z = y; 
+
+5. What is // and \\? 
+
+6. If x = true, y = false, what value is z? 
+bool z = !((x && y) || (x || y)); 

@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1579445410 source:c:\users\nancy qin\desktop\2017\2017s5\main.cpp
+	<iostream>
+	<vector>
+	<bits/stdc++.h>
+	<stdio.h>
+

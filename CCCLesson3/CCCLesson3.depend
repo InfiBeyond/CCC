@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1578000224 source:c:\users\nancy qin\desktop\ccclesson3\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+

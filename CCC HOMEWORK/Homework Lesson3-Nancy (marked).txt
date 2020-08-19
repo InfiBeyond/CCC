@@ -1,0 +1,152 @@
+﻿Homework Lesson 3
+1. slide 9 2D STRING VECTORS
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    int num;
+    cin >> num;
+    vector <vector<char>> board;
+    for(int i = 0; i < num; i++)
+    {
+        board.emplace_back(vector<char>());
+        for(int j = 0; j < num; j++)
+        {
+            board[i].emplace_back('b');
+            cout << board[i][j];
+        }
+        cout << endl;
+    }
+
+Comments: Good job :)
+
+——————————分割线——————————
+2. SLIDE 10 2D STRING VECTORS B&W
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{
+    int num;
+    cin >> num;
+    vector <vector<char>> board;
+    bool wFirst = false;
+    for(int i = 0; i < num; i++)
+    {
+        board.emplace_back(vector<char>());
+        if(i%2==0)
+            wFirst = true;
+        for(int j = 0; j < num; j++)
+        {
+            if((wFirst&&j%2==0) || (!wFirst&&j%2!=0))
+            {
+               board[i].emplace_back('b');
+               cout << board[i][j];
+            }
+            else
+            {
+                board[i].emplace_back('w');
+                cout << board[i][j];
+            }
+        }
+        cout << endl;
+        wFirst = false;
+    }
+
+
+Comments: Good use of the switch wFirst. I would recommend adding brackets to indicate operator precedence.
+For example, use ((!wFirst)&&j%2!=0) instead of (!wFirst&&j%2!=0)
+——————————分割线——————————
+
+3. slide23 FUNCTION CHECKERBOARD
+#include <iostream>
+#include <vector>
+using namespace std;
+
+vector <vector <char>> initialize(int n)
+{
+    //part 1
+    vector <vector<char>> board;
+    for(int i = 0; i < n; i++)
+    {
+        board.emplace_back(vector<char>());
+        for(int j = 0; j < n; j++)
+        {
+            board[i].emplace_back('b');
+        }
+    }
+    //part 3
+    bool wFirst = false;
+    for(int i = 0; i < n; i++)
+    {
+        if(i%2==0)
+            wFirst = true;
+        for(int j = 0; j < n; j++)
+        {
+            if((wFirst&&j%2==0) || (!wFirst&&j%2!=0))
+            {
+               board[i][j] = 'b';
+            }
+            else
+            {
+               board[i][j] = 'w';
+            }
+        }
+        wFirst = false;
+    }
+    return board;
+}
+
+void print (vector<vector<char>> board)
+{
+    for(auto i : board)
+    {
+        for(auto j : i)
+        {
+            cout << j;
+        }
+        cout << endl;
+    }
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    vector<vector<char>> board = initialize(n);
+    print(board);
+}
+
+
+comments: Good job :)
+
+——————————分割线——————————
+
+4. slide62 IMPOVED BUBBLE SORT
+#include <iostream>
+#include <vector>
+using namespace std;
+int main()
+{ 
+    vector<int> a = {9,1,2,3,4,5,6,7,8};
+    int n = a.size();
+    int stop = 0;
+    for(int i=0; i<n; i++)
+    {
+        stop = 0;
+        for(int j=0; j<n-i-1; j++)
+        {
+            if(a[j]>a[j+1])
+            {
+                swap(a[j],a[j+1]);
+                stop++;
+            }
+        }
+        if(stop == 0)
+          break;
+    }
+}
+    
+Comments: Good job! You can actually just use a bool instead of an int. See class 6 final version of bubble sort. 
+

@@ -1,0 +1,52 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+void H (vector<vector<int>>* n, int h)
+{
+    if(h == 0)
+    {
+        return;
+    }
+    swap((*n)[0][0],(*n)[1][0]);
+    swap((*n)[0][1],(*n)[1][1]);
+    H(n, h-1);
+}
+void V (vector<vector<int>>* n, int v)
+{
+     if(v == 0)
+    {
+        return;
+    }
+    swap((*n)[0][0],(*n)[0][1]);
+    swap((*n)[1][0],(*n)[1][1]);
+    V(n, v-1);
+}
+int main()
+{
+    vector<vector<int>> num = {{1,2},{3,4}};
+    string order;
+    int h = 0;
+    int v = 0;
+    getline(cin, order);
+    int len = order.length();
+    for(int i =0; i < len; i++)
+    {
+        if(order.substr(i,1)=="H")
+            h++;
+        else
+            v++;
+    }
+    h%=2;
+    v%=2;
+    H(&num,h);
+    V(&num,v);
+    for(auto i:num)
+    {
+        for(auto j:i)
+            cout<< j << " ";
+        cout<<endl;
+    }
+
+    return 0;
+}

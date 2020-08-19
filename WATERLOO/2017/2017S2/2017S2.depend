@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1579317809 source:c:\users\nancy qin\desktop\2017\2017s2\main.cpp
+	<iostream>
+	<algorithm>
+	<vector>
+	<math.h>
+

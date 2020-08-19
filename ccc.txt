@@ -1,0 +1,112 @@
+struct Restaurant {
+	int name; 
+	bool pho; 
+	vector <Restuarant *> path;
+	Restaurant(int name, bool pho):name{name}, pho{pho} {}
+	Restaurant (int name) : name{name}, pho{false} {}
+	Restaurant() {}
+	
+	
+}; 
+
+bool clean (vector <Restaurant> &cityMap, int &max_dist, int &path_start_loc, int startPho, int curLoc, int &deleted_count, int dist = 0, int prev = -1){
+	int len = cityMap[curLoc].path.size(); 
+	int next_name; 
+	bool has_pho = false; 
+	
+	for (int i = 0; i < len; ++i) {
+		next_name = cityMap[curLoc].path[i]->name; 
+		if (next_name != prev) {
+			if (!clean (cityMap, max_dist, path_start_loc, startPho, next_name, deleted_count, dist + 1, curLoc) { // no pho
+				++deleted_count; 
+				cityMap[next_name].path.clear(); // clear all connecting paths
+				cityMap[curLoc].path.erase(cityMap[curloc].path.begin() + i);
+				--len; 
+				--i; 
+			} else {
+				has_pho = true; 
+			}	
+		}
+	}
+	if (cityMap[curLoc].pho) {
+		if (startPho != curLoc && dist > max_dist) {
+			max_dist = dist; 
+			path_start_loc = curLoc; 
+		}
+		return true; 
+	}
+	return has_pho; 
+}
+
+
+int main () {
+	vector<Restaurant> cityMap; 
+	vector <int> pho; 
+	int n, m; 
+	cin >> n;
+	cin >> m; 
+	for (int i = 0; i < n; ++i) {
+		cityMap.emplace_back(Restaurant{i}); 
+	}
+	int input; 
+	for (int i = 0; i < m; ++i) {
+		cin >> input; 
+		pho.emplace_back(input); 
+		cityMap[input].pho = true;
+	}
+	int edge1, edge2; 
+	for (int i = 0; i < n-1; ++i) {
+		cin >> edge1; 
+		cin >> edge2;
+		cityMap[edge1].path.emplace_back(&cityMap[edge2]); 
+		cityMap[edge2].path.emplace_back(&cityMap[edge1]); 
+	}
+	int max_dist = 0; 
+}
+
+
+
+
+///////////////
+
+struct Cell {
+char type; 
+int x, y;
+int distance; 
+bool visited; 
+Cell (char type, int x, int y) : type {type}, x{x}, y{y}, distance{-1}, visited{false}{}
+}; 
+
+void visit (vector <vector <Cell>> &room, Cell &curLoc, int n, int m, int curdistance = 0) {
+int xloc = curLoc.x; 
+int yloc = curLoc.y; 
+xloc - 1; // up
+xloc + 1; //down
+yloc + 1; //right
+yloc - 1; // left
+
+Cell newCell; 
+if (yloc + 1 < m) {
+newCell = room[xloc][yloc + 1]; 
+if (newCell.type == '.' && (!newCell.visited || newCell.distance > curdistance + 1)) {
+visit (room, newCell, n, m, curdistance+1); 
+}
+}
+}
+
+
+int main () {
+vector <vector <Cell>> room; 
+int n, m; 
+cin >> n >> m; 
+char input; 
+
+for (int i = 0; i < n; ++i) {
+room.emplace_back(vector<Cell>()); 
+for (int j = 0; j < m; ++j) {
+cin >> input; 
+Cell temp{input, i, j}; 
+room[i].emplace_back(temp); 
+}
+}
+}

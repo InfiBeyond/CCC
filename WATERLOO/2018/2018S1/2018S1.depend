@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1579398269 source:c:\users\nancy qin\desktop\2018s1\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+	<iomanip>
+
+1580048001 source:c:\users\nancy qin\desktop\waterloo\2018\2018s1\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+	<iomanip>
+

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1581276263 source:c:\users\nanxi\onedrive\desktop\2012s3\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+

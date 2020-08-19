@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1581483769 source:c:\users\nanxi\onedrive\desktop\2019s4\main.cpp
+	<iostream>
+	<vector>
+	<algorithm>
+
